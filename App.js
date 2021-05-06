@@ -7,8 +7,8 @@ export default function App() {
   return (
     <Screen>
       <DetailsPages
-        title="hello"
-        description="hello 1"
+        title="Club 71"
+        description="Bar - Grand Tunis"
         image={require("./App/assets/landing1.jpg")}
       />
     </Screen>

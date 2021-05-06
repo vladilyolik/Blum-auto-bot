@@ -1,41 +1,20 @@
 import React from "react";
 import { View, StyleSheet, Image } from "react-native";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "../components/AppText";
 import colors from "../config/colors";
+import StoreHeader from "../components/StoreHeader";
 
-function DetailsPages({ title, description, image }) {
+function DetailsPages() {
   return (
-    <View style={styles.detailsContainer}>
-      <Image source={image} style={styles.image} />
-      <View style={styles.textContainer}>
-        <AppText style={styles.title}>{title}</AppText>
-        <AppText style={styles.description}>{description}</AppText>
-      </View>
-    </View>
+    <StoreHeader
+      logo={require("../assets/NoLogo.jpg")}
+      title="Club 71"
+      description="Bar - Grand Tunis"
+      image={require("../assets/landing1.jpg")}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  detailsContainer: {
-    flex: 1,
-  },
-  image: {
-    width: "100%",
-    height: 300,
-  },
-  textContainer: {
-    margin: 20,
-  },
-  title: {
-    color: colors.primary,
-    fontWeight: "bold",
-    fontSize: 30,
-  },
-  description: {
-    color: colors.secondary,
-    fontSize: 17,
-  },
-});
 
 export default DetailsPages;
