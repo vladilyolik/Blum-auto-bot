@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, Platform } from "react-native";
 
-function AppText({ children }) {
-  return <Text>{children}</Text>;
+function AppText({ children, style }) {
+  return <Text style={style}>{children}</Text>;
 }
 Platform.select({
   ios: {
