@@ -21,7 +21,7 @@ function StoreHeader({ title, description, image, logo }) {
 
 const styles = StyleSheet.create({
   detailsContainer: {
-    flex: 1,
+    height: 350,
   },
   image: {
     width: "100%",
