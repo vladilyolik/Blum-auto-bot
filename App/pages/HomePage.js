@@ -1,11 +1,11 @@
 import React from "react";
-import { View } from "react-native";
+import { View, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 
 function HomePage(props) {
   return (
-    <View style={{ backgroundColor: "#f8f4f4", padding: 20, marginTop: 100 }}>
+    <View style={styles.container}>
       <Card
         title="Hello world"
         subtitle="here id the description"
@@ -14,5 +14,13 @@ function HomePage(props) {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#f8f4f4",
+    padding: 20,
+  },
+});
 
 export default HomePage;

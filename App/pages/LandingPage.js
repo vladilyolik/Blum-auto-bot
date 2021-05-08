@@ -1,11 +1,11 @@
 import React from "react";
-import { ImageBackground, StyleSheet, View } from "react-native";
+import { Button, ImageBackground, StyleSheet, View } from "react-native";
 
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
 import colors from "../config/colors";
 
-function LandingPage(props) {
+function LandingPage({ navigation }) {
   return (
     <Screen>
       <ImageBackground
@@ -14,7 +14,11 @@ function LandingPage(props) {
         source={require("../assets/landing.jpg")}
       >
         <View style={styles.buttonsContainer}>
-          <AppButton title={"Login"} color="primary" />
+          <AppButton
+            pressed={() => navigation.navigate("HomePage")}
+            title={"Login"}
+            color="primary"
+          />
           <AppButton title="Register" color="secondary" />
         </View>
       </ImageBackground>

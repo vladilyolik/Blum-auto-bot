@@ -7,7 +7,7 @@ import AppButton from "./AppButton";
 import colors from "../config/colors";
 import Screen from "./Screen";
 
-export default function ImagePicker() {
+export default function ImagePicker({ setUri }) {
   const [imageUri, setImageUri] = useState();
 
   const requestPermission = async () => {
@@ -20,7 +20,7 @@ export default function ImagePicker() {
   const selectImage = async () => {
     try {
       const result = await ImagePickerLibrary.launchImageLibraryAsync();
-      if (!result.cancelled) setImageUri(result.uri);
+      if (!result.cancelled) setUri(result.uri);
     } catch (error) {
       console.log("error selecting an image", error);
     }
