@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, ImageBackground, StyleSheet, View } from "react-native";
+import { Button, ImageBackground, StyleSheet, View, Text } from "react-native";
 
 import Screen from "../components/Screen";
 import AppButton from "../components/AppButton";
@@ -14,9 +14,15 @@ function LandingPage({ navigation }) {
         source={require("../assets/landing.jpg")}
       >
         <View style={styles.buttonsContainer}>
+          <Text
+            onPress={() => navigation.navigate("HomePage")}
+            style={styles.skipButton}
+          >
+            Skip
+          </Text>
           <AppButton
             pressed={() => navigation.navigate("HomePage")}
-            title={"Login"}
+            title="Skip"
             color="primary"
           />
           <AppButton title="Register" color="secondary" />
@@ -33,6 +39,10 @@ const styles = StyleSheet.create({
   },
   buttonsContainer: {
     padding: 20,
+  },
+  skipButton: {
+    textDecorationLine: "underline",
+    color: colors.gray,
   },
 });
 

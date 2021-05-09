@@ -11,9 +11,10 @@ import LandingPage from "./App/pages/LandingPage";
 
 const Stack = createStackNavigator();
 const StackNavigator = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="LandingPage" component={LandingPage} />
     <Stack.Screen name="HomePage" component={HomePage} />
+    <Stack.Screen name="DetailsPages" component={DetailsPages} />
   </Stack.Navigator>
 );
 export default function App() {

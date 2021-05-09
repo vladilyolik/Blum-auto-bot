@@ -1,17 +1,34 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { ScrollView, StyleSheet } from "react-native";
 
 import Card from "../components/Card";
 
-function HomePage(props) {
+function HomePage({ navigation }) {
+  const data = [
+    {
+      key: 1,
+      title: "Tunisia Mall",
+      subtitle: "Lac 2 - Tunis",
+      image: require("../assets/landing1.jpg"),
+    },
+    {
+      key: 2,
+      title: "Mall Of Sousse",
+      subtitle: "Sousse",
+      image: require("../assets/landing1.jpg"),
+    },
+  ];
   return (
-    <View style={styles.container}>
-      <Card
-        title="Hello world"
-        subtitle="here id the description"
-        image={require("../assets/landing1.jpg")}
-      />
-    </View>
+    <ScrollView style={styles.container}>
+      {data.map((store) => (
+        <Card
+          pressed={() => navigation.navigate("DetailsPages", { data: store })}
+          title={store.title}
+          subtitle={store.subtitle}
+          image={store.image}
+        />
+      ))}
+    </ScrollView>
   );
 }
 

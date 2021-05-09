@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Image, ScrollView } from "react-native";
+import * as React from "react";
+import { View, StyleSheet, Image, ScrollView, Text } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "../components/AppText";
@@ -9,13 +9,14 @@ import PriceBar from "../components/PriceBar";
 import LineBetween from "../components/LineBetween";
 import AboutStore from "../components/AboutStore";
 
-function DetailsPages() {
+function DetailsPages({ route }) {
+  const { data } = route.params;
   return (
     <ScrollView>
       <StoreHeader
         logo={require("../assets/NoLogo.jpg")}
-        title="Club 71"
-        description="Bar - Grand Tunis"
+        title={data.title}
+        description={data.subtitle}
         image={require("../assets/landing1.jpg")}
       />
       <LineBetween />
